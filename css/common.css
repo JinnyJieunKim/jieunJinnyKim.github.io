@@ -69,7 +69,7 @@ header h2 {display:none;}
 }
 
 /* about */
-.about {width:100%; height:150vh; position:relative; background:#fff; overflow:hidden;}
+.about {width:100%; height:150vh; position:relative; overflow:hidden;}
 .about .v-line {display:block; width:1px; height:200px; position:absolute; top:0; left:55%; border-left:1px solid #9898bd;}
 .about .v-line.v2 {height:200px; top:auto; bottom:0; left:45%;}
 .about h2 {padding:250px 0 80px; font-size:40px; line-height:40px; color:#fff; text-align:center;}
@@ -121,7 +121,7 @@ header h2 {display:none;}
 .skill ul li div span {display:inline-block; width:auto; font-size:11px; line-height:14px; color:#000; background:#fff; text-align:center; vertical-align:top;}
 
 /* portfolio */
-.portfolio {position:relative;}
+.portfolio {position:relative; background:#fff;}
 .portfolio .v-line {display:block; width:1px; height:130px; position:absolute; top:0; left:45%;
 border:none; background-color: #000}
 .portfolio h2 {padding:140px 150px 180px 175px; position:relative;font-size:40px; line-height:40px; color:#000; text-align:center; /*background: #f5f5f5;*/}
