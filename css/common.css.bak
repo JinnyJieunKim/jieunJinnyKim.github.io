@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+
+#skipToContent {display:none;}
+h1 {display:none;}
+
+/* header */
+header {display:none;}
+
+/* visul */
+.visual {width:100%; height:100vh; position:relative; background:url('../images/bg_visual.jpg') no-repeat; background-position:0 0; /*background-size:cover;*/ overflow:hidden;}
+.space-move {position:absolute; top:-60%; left:-30%; width:1446px; height:1286px; background:url('../images/space_move.png') no-repeat; background-size:cover;opacity:1;}
+.stars {position:absolute; bottom:-20%; right:-30%; width:1421px; height:934px; background:url('../images/space_move2.png') no-repeat; background-size:cover; opacity:1;}
+.visual .name {width:100%; position:absolute; top:30%; text-align:center; font-size:90px; color:rgba(255,255,255,0.7); letter-spacing:0.05em;}
+.visual .name span {display:block; font-family:'Poppins'; font-weight:Bold; font-size:130px; line-height:120px; color:rgba(255,255,255,0.9);}
+.visual .name sup {position:relative;}
+.visual .typing-txt {width:100%; position:absolute; top:50%; left:0; font-size:20px; color:#fff; text-align:center;}
+.bar {border-right: 0.08em solid #fff}
+.v-line {display:block; width:1px; height:150px; position:absolute; bottom:0; left:55%; border-left:1px solid #9898bd; opacity:0.7; z-index:1;}
+.btn-go-down {margin-left:-39px; position:absolute; bottom:20%; left:50%; font-size:11px; color:#9898bd; text-decoration:none; opacity:0.8;}
+.btn-go-down:hover {text-decoration:none;}
+.fa-sort-down {position:absolute; bottom:20%; left:54.7%; font-size:15px; color:#fff; z-index:1;}
+.btn-go-down:hover ~ .v-line {height:90px; transition:1s;}
+.btn-go-down:hover ~ .fa-sort-down {bottom:12%; transition:1s;}
+/* visual animation */
+@keyframes spaceMove {
+    0%   {background-position:20% 30%;opacity:1;}
+    50%   {background-position:100% 100%;top:70%; left:70%;opacity:0.3;}
+    100% {background-position:20% 30%;top:0;left:0;opacity:1;}
+}
+
+@keyframes starMove {
+    0%   {background-position:100% 100%;opacity:1;}
+    50%   {background-position:0% 0%; bottom:30%; right:50%;opacity:0.5;}
+    100% {background-position:100% 100%;top:0;right:0;opacity:1;}
+}
+
+@keyframes bgMove {
+	20% {ackground-position:0 0;}
+	50% {ackground-position:100% 100%;}
+	100% {background-position:100% 100%;}
+}
+
+@keyframes line1Move {
+	0% {left:60%;}
+	50% {left:0;}
+	100% {left:60%;}
+}
+
+@keyframes line2Move {
+	0% {bottom:30%;}
+	100% {bottom:100%;}
+}
+.space-move {animation: spaceMove 150s linear 0s infinite;}
+.visual .txt span {animation: textSparkle 10s ease-in 0s infinite;}
+.stars {animation: starMove 100s linear 0s infinite;}
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+
+/* about */
+.about {width:100%; height:150vh; position:relative; overflow:hidden;}
+.about .v-line {display:block; width:1px; height:200px; position:absolute; top:0; left:55%; border-left:1px solid #9898bd;}
+.about .v-line.v2 {height:200px; top:auto; bottom:0; left:45%;}
+.about h2 {padding:250px 0 80px; font-size:40px; line-height:40px; color:#fff; text-align:center;}
+.about h2 span {display:block; font-weight:200; font-size:20px;}
+.about .inner {position:relative; height:100%; z-index:1;}
+/* .about .circle {width:600px; height:600px; margin:0 auto; border:5px solid #fff; border-radius:100%;} */
+.about .circle {width:300px; height:300px; margin:0 auto; position:relative; background:url('../images/moon.png') no-repeat; background-size:100%; border-radius:100%; opacity:0.7; z-index:2;}
+.about .circle {animation:moonRotate 50s linear 0s infinite;}
+.about .bg {width:100%;height:100%;position:absolute; top:0; left:0; background:#000;}
+.about .bg .star {position:absolute;top:0;left:0;display:block;width:100%;height:100%;}
+.about .bg .star img {width:100%;height:100%;opacity:0;}
+.about .bg .star.v1 img {animation: starScale 9s linear 0s infinite;}
+.about .bg .star.v2 img {animation: starScale 9s linear 3s infinite;}
+.about .bg .star.v3 img {animation: starScale 9s linear 6s infinite;}
+
+@keyframes starScale {
+    0%   {transform:scale(0);opacity:0;}
+    20%  {opacity:1;}
+    100% {transform:scale(3);opacity:1;}
+}
+
+@keyframes moonRotate {
+    0%   {transform:rotate(0deg) scale(1);opacity:0.7;}
+    50% {transform:rotate(360deg) scale(0.7);opacity:0.3;}
+    100%   {transform:rotate(0deg) scale(1);opacity:0.7;}
+}
+
+/* .about ul {position:absolute; top:0; left:0; width:100%; height:100%;}
+.about ul li {position:absolute; top:70%; left:45%; font-size:15px; line-height:15px; color:#fff; opacity:0; transition:1s; z-index:1;}
+ */
+/* .about .list-area {position:absolute; top:50%; left:50%; width:600px; height:600px; margin:-300px 0 0 -300px;}
+.about .list-area ul {position:relative; width:600px; height:600px;}
+.about ul li {position:absolute; font-size:15px; line-height:15px; color:#fff; transition:1s; z-index:1;}
+.about ul li:first-child {left:0; top:45%}
+.about ul li:nth-child(2) {right:0; top:45%;}
+.about ul li:nth-child(3) {left:46%; top:0;}
+.about ul li:nth-child(4) {left:10%; top:20%;}
+.about ul li:nth-child(5) {right:10%; top:20%;}
+.about ul li:nth-child(6) {left:10%; bottom:20%;}
+.about ul li:nth-child(7) {right:10%; bottom:20%;}
+.about ul li:nth-child(8) {left:42%; bottom:10%;}
+ */
+.about .introducing {position:absolute; top:27.1%; left:0; width:100%;}
+.about .introducing h3 {position:absolute; top:65%; left:0; width:100%; text-align:center;}
+.about .introducing ul {position:relative; width:100%; font-size:16px; line-height:20px; color:#fff;}
+.about .introducing ul {animation:aboutListRotate 50s linear 0s infinite reverse}
+.about .introducing span {padding:0 2px;}
+
+
+ @keyframes aboutListRotate {
+    0%   {transform:rotate(360deg) scale(1);opacity:0.7;}
+    50%   {transform: rotate(0deg) scale(0.7);opacity:0.3;}
+    100%   {transform: rotate(360deg) scale(1);opacity:0.7;}
+}
+
+
+
+/* skills */
+.skill {position:absolute; bottom:24%; left:0; width:100%;}
+.skill ul {width:32%; margin:0 auto;}
+.skill ul li {padding:0 0 10px 175px;}
+.skill ul li h3 {float:left; margin-left:-175px; width:160px; font-weight:normal; font-size:15px; line-height:16px; color:#fff; text-align:right;}
+.skill ul li:nth-child(even) h3 {float:right; text-align:left;}
+.skill ul li div {float:left; width:61%; height:15px; border:1px solid rgba(255,255,255,0.3); vertical-align:middle; box-sizing:border-box;}
+.skill ul li div:nth-child(even) {text-align:right;}
+.skill ul li div span {display:inline-block; width:auto; font-size:11px; line-height:14px; color:#000; background:#fff; text-align:center; vertical-align:top;}
+
+/* .skills {width:1200px; margin:0 auto; padding:120px 0;}
+.skills h2 {margin-bottom:50px; margin-left:40px; font-size:40px; line-height:40px; color:#000; text-align:center;}
+.skills h3 {margin-bottom:30px; font-size:30px;}
+.skills ul:after {content:" "; display:block; clear:both;}
+.skills ul li {float:left; width:21.25%; height:320px; margin-left:60px; position:relative; font-size:20px; text-align:center; overflow:hidden;}
+.skills ul li:first-child {margin-left:0;}
+.skills ul li .bg {width:100%; height:255px; background:url('../images/moon.png') no-repeat; background-size:cover; border-radius:100%;}
+.skills ul li h4 {padding:15px 0;}
+.skills ul li .shadow {display:block; width:100%; height:255px; position:absolute; top:8%; left:100%; background:#fff; border-radius:100%;
+-webkit-box-shadow: 0px 0px 30px 10px rgba(255,255,255,1);
+-moz-box-shadow: 0px 0px 30px 10px rgba(255,255,255,1);
+box-shadow: 0px 0px 30px 10px rgba(255,255,255,1);
+}
+.skills .technology {} 
+ */
+
+/* portfolio */
+.portfolio {position:relative;}
+.portfolio .v-line {display:block; width:1px; height:130px; position:absolute; top:0; left:45%;
+border:none;
+}
+.portfolio h2 {padding:140px 150px 50px 0; margin-left:40px; font-size:40px; line-height:40px; color:#a25a5a; text-align:center;}
+.portfolio ul:after {content:" "; display:block; clear:both;}
+.portfolio ul li {float:left; display:none; width:25%; height:auto; font-size:0; transition:0.5s;}
+.portfolio ul li:nth-child(-n+8) {display:block;}
+.portfolio ul li img {width:100%;}
+.btn-pop-etc {display:none;}
+
+footer {background:#000;}

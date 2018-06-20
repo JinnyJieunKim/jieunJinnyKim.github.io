@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+
+@media (max-width: 1800px){
+    .skill ul {width:34%;}	
+}
+
+@media (max-width: 1600px){
+    .skill ul {width:38%;}	
+}
+
+@media (max-width: 1400px){
+    .skill ul {width:43%;}	
+}
+
+@media (max-width: 1280px){
+    .skill ul {width:48%;}
+    .portfolio .btn {padding:12% 0;}
+}
+
+/* landscape tablet and desktop */
+@media (max-width: 1024px){
+    .v-line {display:none;}
+    .btn-go-down {bottom:25%; margin-left:-45px; font-size:15px;}
+    .btn-go-down:hover ~ .fa-sort-down {bottom:20%;}
+    .fa-sort-down {left:50%; font-size:20px;}
+    .about {height:100vh}
+    .about .v-line {display:none;}
+    .about h2 {padding:120px 0 40px;}
+    .about .circle-area {opacity:0.4;}
+    .skill ul {width:60%;}
+    .portfolio .v-line {display:none;}
+    .portfolio h2 {padding:80px 0 50px 0;}
+    .portfolio h2:after {display:none;}
+    .portfolio .tab-menu {padding:2% 0 5%;}
+    .portfolio .btn {padding:8% 0 10%;}
+    .portfolio .btn:before, .portfolio .end-txt:before, .portfolio .btn:after, .portfolio .end-txt:after {display:none;}
+    footer .inner {padding:3% 0;}
+}
+
+/* Landscape phone to portrait phone */
+@media (max-width: 760px) {
+    .space-move {width:100%; height:800px;}
+    .stars {width:100%; height:800px;}
+    .skill {bottom:30%;}
+    .skill ul {width:82%;}
+    .skill ul li {padding:0 0 2% 28%;}
+    .skill ul li h3 {font-size:20px; line-height:22px;}
+    .skill ul li div {height:20px;}
+    .skill ul li div span {line-height:20px;}
+    .portfolio .site-list li {width:33.3%;}
+    .portfolio .site-list li:nth-child(-n+9) {display:block;} 
+}
+
+/* Landscape phones and down */
+@media (max-width: 460px) {
+    header {display:block;}
+    header h2 {display:none;}
+    header .btn-nav {position: fixed; top:2%; left:3%; z-index:9;}
+    header .btn-nav .svg-inline--fa {font-size:20px; color:#fff;}
+    header nav {display:none; width:50%; height:100vh; padding:12% 2% 0 5%; position:fixed; top:0; left:0; background:#fff; z-index:10;}
+    header nav li a {display:block; font-size:20px; line-height:40px; color:#000;}
+    header nav .btn-close {position:fixed; top:2%; left:5%; font-size:20px; color:#000;}
+    .visual .name {top:15%;}
+    .space-move {width:120%; height:1000px;}
+    .stars {width:160%; height:1000px;}
+    .about h2 {padding:30px 0 20px; font-size:30px;}
+    .about h2 span {display:none;}
+    .circle-area {width:100%;}
+    .skill {bottom:0;}
+    .skill ul li {padding:0; overflow:hidden;}
+    .skill ul li:nth-child(even) {padding-bottom:8%;}
+    .skill ul li h3 {float:none; width:100%; margin-left:0; font-size:15px; line-height:15px; text-align:center;}
+    .skill ul li:nth-child(even) h3 {text-align:center;}
+    .skill ul li:nth-child(even) div {border-top:none;}
+    .skill ul li div {width:100%;}
+    .portfolio h2 {padding:50px 0 30px; font-size:30px;}
+    .portfolio .tab-menu li {display:inline-block; width:25%; padding-left:0; line-height:30px;}    
+    .portfolio .site-list {width:98%;}
+    .portfolio .site-list li {width:50%; padding:0.7% 1%;}
+    .portfolio .site-list li:nth-child(-n+9) {display:none;}
+    .portfolio .site-list li:nth-child(-n+6) {display:block;}
+} 
+
+@media (max-width: 360px) {
+    .skill {bottom:12%;}
+    .portfolio .tab-menu li:nth-child(4),.portfolio .tab-menu li:nth-child(5) {width:28%;}
+}
