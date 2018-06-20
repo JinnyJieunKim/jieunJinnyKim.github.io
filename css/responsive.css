@@ -64,13 +64,13 @@
     .visual .name {top:15%;}
     .space-move {width:120%; height:1000px;}
     .stars {width:160%; height:1000px;}
-    .about h2 {padding:30px 0 20px; font-size:30px;}
+    .about h2 {padding:30px 0 20px; font-size:30px; line-height:30px;}
     .about h2 span {display:none;}
     .circle-area {width:100%;}
-    .skill {bottom:0;}
+    .skill {bottom:5%;}
     .skill ul li {padding:0; overflow:hidden;}
     .skill ul li:nth-child(even) {padding-bottom:8%;}
-    .skill ul li h3 {float:none; width:100%; margin-left:0; font-size:15px; line-height:15px; text-align:center;}
+    .skill ul li h3 {float:none; width:100%; margin-left:0; font-size:15px; line-height:10px; text-align:center;}
     .skill ul li:nth-child(even) h3 {text-align:center;}
     .skill ul li:nth-child(even) div {border-top:none;}
     .skill ul li div {width:100%;}
