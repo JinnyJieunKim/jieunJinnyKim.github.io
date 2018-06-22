@@ -69,7 +69,7 @@ header h2 {display:none;}
 }
 
 /* about */
-.about {width:100%; height:150vh; position:relative; overflow:hidden;}
+.about {width:100%; height:150vh; position:relative; background:#fff; overflow:hidden;}
 .about .v-line {display:block; width:1px; height:200px; position:absolute; top:0; left:55%; border-left:1px solid #9898bd;}
 .about .v-line.v2 {height:200px; top:auto; bottom:0; left:45%;}
 .about h2 {padding:250px 0 80px; font-size:40px; line-height:40px; color:#fff; text-align:center;}
@@ -97,11 +97,15 @@ header h2 {display:none;}
 .circle-area {width:500px; height:500px; position: relative; margin:0 auto;}
 .about .circle {width:300px; height:300px; margin:10% auto 0; position:relative; background:url('../images/moon.png') no-repeat; background-size:100%; border-radius:100%; opacity:0.7; z-index:2;}
 .about .circle {animation:moonRotate 50s linear 0s infinite;}
-.about .introducing {position:absolute; top:-5%; left:0; width:100%;}
+.about .introducing {position:absolute; top:-5%; left:0; width:100%; z-index:2;}
+:-ms-fullscreen, :root .about .introducing {top:-6%;}
+@media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {.about .introducing{top:-6%;}};
 .about .introducing h3 {position:absolute; top:65%; left:0; width:100%; text-align:center;}
 .about .introducing ul {position:relative; width:100%; font-size:16px; line-height:20px; color:#fff;}
 .about .introducing ul {animation:aboutListRotate 50s linear 0s infinite reverse}
 .about .introducing span {padding:0 2px;}
+.about.low-ie .introducing {top:5%;}
+.about.low-ie .introducing ul li {text-align:center; margin-bottom:10px;} 
 
 
  @keyframes aboutListRotate {
@@ -138,13 +142,27 @@ border:none; background-color: #000}
 .portfolio .site-list li {float:left; display:none; width:25%; height:auto; padding:1%; position: relative; font-size:0; text-align:center; transition:0.5s; overflow: hidden; box-sizing: border-box;}
 .portfolio .site-list li:nth-child(-n+8) {display:block;}
 .portfolio .site-list li a {display: block; width:100%; border:1px solid #000;overflow:hidden;}
-.portfolio .site-list li img {width:100%; -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */ filter: grayscale(100%); opacity:0.7; transition: 0.5s;}
-.portfolio .site-list li:hover img {
+.portfolio .site-list li img {width:100%; opacity:0.7; transition: 0.5s;}
+img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	filter: gray;
+	-webkit-filter: grayscale(100%);
+}
+.portfolio .site-list li:hover img.grayscale {
     -ms-transform: scale(1.1, 1.1); /* IE 9 */
     -webkit-transform: scale(1.1, 1.1); /* Safari */
     transform: scale(1.1, 1.1);
-    -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */ filter: grayscale(0); opacity:1;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");    
+	filter: none;
+	-webkit-filter: none;
+    opacity:1;
 }
+
+.portfolio li:hover .grayscale-fix img.grayscale {
+	visibility: visible !important;
+	position: relative;
+}
+
 .portfolio .site-list li h3 {display:none; width:80%; height:80%; margin:0 10%; padding:10%; position:absolute; top:10%; left:0; font-size:20px; line-height:20px; color:#000; text-align: center; box-sizing: border-box; background:rgba(255,255,255,0.5);}
 .portfolio .site-list li a:hover h3 {display: block;}
 .portfolio .site-list p {padding:10% 0; font-size:20px; line-height:20px; color:#000; text-align:center;}
